@@ -1,0 +1,10 @@
+[
+  {
+    "caption": "Capistrano: Deploy",
+    "command": "capistrano_rails_deploy"
+  },
+  {
+    "caption": "Capistrano: Run Task",
+    "command": "capistrano_rails_run_task"
+  }
+]
