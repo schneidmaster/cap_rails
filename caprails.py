@@ -46,6 +46,10 @@ class CapistranoRailsDeployCommand(CapistranoRailsCommand):
     # Define callback to run Capistrano when stage is selected.
     def stage_deploy(i):
 
+      # If i = -1, they hit escape or didn't make a selection
+      if i == -1:
+        return
+
       # Construct the command.
       cmd = self.command.command_string(stage_commands[i] + ' deploy')
 
@@ -84,6 +88,11 @@ class CapistranoRailsRunTaskCommand(CapistranoRailsCommand):
 
     # Define callback to run task when selected.
     def select_task(i):
+
+      # If i = -1, they hit escape or didn't make a selection
+      if i == -1:
+        return
+
       # Construct the command.
       task = self.tasks[i]
       if type(task) is list:
@@ -100,6 +109,10 @@ class CapistranoRailsRunTaskCommand(CapistranoRailsCommand):
 
     # Define callback to run Capistrano when stage is selected.
     def select_stage(i):
+      # If i = -1, they hit escape or didn't make a selection
+      if i == -1:
+        return
+
       # Store selected stage.
       self.stage = stage_commands[i]
 
